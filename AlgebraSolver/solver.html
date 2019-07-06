@@ -3,7 +3,88 @@
 <head>
 	<title>Algebra solver v.2.0.2</title>
 </head>
+<style type="text/css">	
+	#box1
+	{
+		width:100%;
+		height:1500px;
+		background-color: #000;
+		color: #fff;
+	}
+		
+	#box2
+	{
+		width:50%;
+		height:1500px;
+	
+		background-image: url('code.png');
+	}
+</style>
 <body>
+	<div id="box1">
+	<h1>Hi!!! this is just a prototype version so u might have to do some work:( sorry
+	First, go to this website...</h1>
+	<li><a href="https://www.python.org/downloads/"><h1>
+		https://www.python.org/downloads/
+	</h1></a></li>
+	<h2>Download the newest version then please do command/control + n and then paste in the following:</h2>
+	<br>
+	from math import pi <br>
+	left = input("left:") <br>
+	print("=")<br>
+	right = input("")<br>
+realx = None <br>
+def solve(x,accuracy): <br>
+    global left,right,realx <br>
+    bestx = x <br>
+    x -= accuracy*6 <br>
+   
+
+    try: <br>
+        smallest = eval(left)-eval(right) <br>
+    except: <br>
+   
+        x += accuracy/10 <br>
+        smallest = eval(left)-eval(right) <br>
+    smallest = abs(round(smallest,12)) <br>
+    for i in range(-1,11): <br>
+        x += accuracy <br>
+        x = round(x,12) <br>
+
+        try: <br>
+            difference = eval(left)-eval(right) <br>
+        except: <br>
+           
+            x += accuracy/10 <br>
+            difference = eval(left)-eval(right) <br>
+        difference = abs(round(difference,12)) <br>
+
+        if difference == 0:<br>
+   
+       
+            realx = x <br>
+            return 0 <br>
+        elif difference < smallest: <br>
+            smallest = difference <br>
+            bestx = x <br>
+  
+    if accuracy < 0.00001: <br>
+ 
+        
+        realx = x <br>
+        return 0 <br>
+   
+    solve(bestx,accuracy/10) <br>
+solve(0,10) <br>
+
+realx = round(realx,14) <br>
+print(realx) <br>
+
+<h4>quite tiring huh? congratulations to the last step!!!</h4>
+<br>
+<br>
+<h5>please check the layout and font and colors(CLIFT if u've been to school) and correct them. (p.s.use TAB to make the line go toward the middle</h5>
+<div id="box2">
 
 </body>
 </html>
